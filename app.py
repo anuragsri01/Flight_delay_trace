@@ -21,23 +21,23 @@ def get_delay():
         new_vector = np.zeros(len(index_dict))
 
         try:
-            new_vector[index_dict['DAY_OF_WEEK_' + str(result['day_of_week'])]] = 1
+            new_vector[index_dict['DayOfWeek' + str(result['DayOfWeek'])]] = 1
         except:
             pass
         try:
-            new_vector[index_dict['UNIQUE_CARRIER_' + str(result['unique_carrier'])]] = 1
+            new_vector[index_dict['UniqueCarrier' + str(result['UniqueCarrier'])]] = 1
         except:
             pass
         try:
-            new_vector[index_dict['ORIGIN_' + str(result['origin'])]] = 1
+            new_vector[index_dict['Origin' + str(result['Origin'])]] = 1
         except:
             pass
         try:
-            new_vector[index_dict['DEST_' + str(result['dest'])]] = 1
+            new_vector[index_dict['Dest' + str(result['Dest'])]] = 1
         except:
             pass
         try:
-            new_vector[index_dict['DEP_HOUR_' + str(result['dep_hour'])]] = 1
+            new_vector[index_dict['DepTime' + str(result['DepTime'])]] = 1
         except:
             pass
 
