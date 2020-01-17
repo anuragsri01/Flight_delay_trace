@@ -10,7 +10,7 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/getdelay', methods=['POST'])
+@app.route('/getdelay', methods=['POST', 'GET'])
 def get_delay():
     if request.method == 'POST':
         result = request.form
@@ -43,10 +43,10 @@ def get_delay():
 
         pkl_file = open('logmodel.pkl', 'rb')
         logmodel = pickle.load(pkl_file)
-        prediction = logmodel.predict(new_vector)
+        prediction = logmodel.predict(new_vector.reshape(1, -1))
 
         return render_template('result.html', prediction=prediction)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
